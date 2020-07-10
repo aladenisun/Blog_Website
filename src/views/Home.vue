@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="home" :fullscreen="$vuetify.breakpoint.mobile">
+    <h1 class="textHome">UNAPOLOGETIC SUNRISE</h1>
+    <blog-article />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import BlogArticle from '@/components/BlogArticle.vue'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    BlogArticle
   }
 }
 </script>
+
+<style>
+.textHome {
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  padding-left: 50rem;
+  color: black;
+}
+</style>
