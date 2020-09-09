@@ -1,4 +1,4 @@
-# demo-lyvo-swe
+# Web_App_Blog
 
 ## Project setup
 
@@ -29,10 +29,6 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## RANDOM ADDITION
 

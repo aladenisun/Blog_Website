@@ -1,7 +1,7 @@
 <template>
   <v-app :fullscreen="$vuetify.breakpoint.mobile">
     <v-card>
-      <v-navigation-drawer v-model="drawer" app :color="color">
+      <v-navigation-drawer v-model="drawer" absolute temporary app :color="color">
         <v-list nav dense>
           <v-list-item-group active-class="primary--text">
             <v-list-item v-on:click="routeTo('/home')">
@@ -20,43 +20,36 @@
         </v-list>
       </v-navigation-drawer>
       <v-app-bar app>
-        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+        <v-toolbar>
+          <v-app-bar-nav-icon @click.native="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-toolbar-title class="font">Unapologetic Sunrise</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items class="hidden-xs-only">
+            <v-btn class="bold">View Blogs</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
       </v-app-bar>
+      <v-main></v-main>
 
-      <!-- Sizes your content based   upon application components -->
-      <v-main>
-        <!-- Provides the application the proper gutter: pretty much your screen-->
-        <v-container fluid>
-          <!-- If using vue-router -->
-          <v-alert v-if="!!$store.state.alertMsg" v-bind:type="$store.state.alertType">{{
-            $store.state.alertMsg
-          }}</v-alert>
-          <router-view></router-view>
-        </v-container>
-      </v-main>
-      <v-footer dark padless>
-        <v-card class="flex" color="#e6ddd5" flat tile>
-          <v-card-title class="colorFooter">
-            <pre class="colorFooter" color="black">Get connected with me on social networks!</pre>
+      <v-footer class="hidden-xs-only" color="#e6ddd5" flat tile>
+        <pre class="colorFooter" color="black">Get connected with me on social networks!</pre>
+        <v-spacer></v-spacer>
+        <v-btn v-for="icon in icons" :key="icon" class="mx-4" color="black" dark icon>
+          <v-icon size="24px">{{ icon }}</v-icon>
+        </v-btn>
 
-            <v-spacer></v-spacer>
-
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4" color="black" dark icon>
-              <v-icon size="24px">{{ icon }}</v-icon>
-            </v-btn>
-          </v-card-title>
-
-          <v-card-text class="py-2 white--text text-center">
-            {{ new Date().getFullYear() }}
-            <pre class="colorFooter">UnapologeticSunrise</pre>
-          </v-card-text>
-        </v-card>
+        <v-card-text class="py-2 white--text text-center">
+          {{ new Date().getFullYear() }}
+          <pre class="colorFooter">UnapologeticSunrise</pre>
+        </v-card-text>
       </v-footer>
     </v-card>
   </v-app>
 </template>
 
 <script>
+import socials from './utils/constants/socials'
+//import { mdiAccount } from '@mdi/js';
 export default {
   name: 'App',
   data: () => ({
@@ -83,5 +76,10 @@ export default {
 .colorFooter {
   color: black;
   font-size: 15px;
+}
+.font {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: oblique;
+  font-weight: bold;
 }
 </style>
