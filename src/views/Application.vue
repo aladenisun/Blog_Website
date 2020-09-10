@@ -13,7 +13,7 @@
             ></v-img>
           </v-row>
           <h1 class="fontFamilyType" align="center" justify="center">NEWSLETTER</h1>
-          <p class="subtitleEdit" align="center" justify="center">
+          <p class="fontFamilyType" align="center" justify="center">
             Subscribe to recieve updates on new posts!
           </p>
           <app-form />
@@ -35,13 +35,11 @@ export default {
 
 <style>
 .fontFamilyType {
-  color: #353131 !important;
+  color: black !important;
 }
 .cardEdit {
-  color: #e6ddd5 !important;
-}
-.subtitleEdit {
-  color: #353131 !important;
+  color: #9e839d !important;
+  background-color: #587264 !important;
 }
 .InfoSocials1 {
   color: #000000 !important;

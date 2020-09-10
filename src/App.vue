@@ -41,8 +41,7 @@
         <v-btn
           v-for="item in socials"
           :key="item.icon"
-          router
-          :to="item.url"
+          :href="item.href"
           class="mx-4"
           color="black"
           dark
@@ -77,10 +76,10 @@ export default {
       { title: 'Sign in', link: '/signIn' }
     ],
     socials: [
-      { icon: 'mdi-facebook', url: 'https://facebook.com' },
-      { icon: 'mdi-twitter', url: 'https://twitter.com' },
-      { icon: 'mdi-linkedin', url: 'https://linkedin.com' },
-      { icon: 'mdi-instagram', url: 'https://instagram.com' }
+      { icon: 'mdi-facebook', href: 'https://www.facebook.com/' },
+      { icon: 'mdi-twitter', href: 'https://twitter.com/nisunalade' },
+      { icon: 'mdi-linkedin', href: 'https://linkedin.com' },
+      { icon: 'mdi-instagram', href: 'https://www.instagram.com/nisunalade/' }
     ]
   }),
 
