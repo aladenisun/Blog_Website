@@ -5,7 +5,9 @@ import About from '@/views/About'
 import Application from '@/views/Application'
 import Contact from '@/views/Contact'
 import SignIn from '@/components/User/SignIn'
-import Profile from '@/components/User/Profile'
+import BlogPost from '@/components/Pages/BlogPost'
+import ViewPosts from '@/components/Pages/AllPosts'
+import CreateBlogPost from '@/components/User/CreateBlogPost'
 
 Vue.use(VueRouter)
 
@@ -38,9 +40,19 @@ export default new VueRouter({
       component: SignIn
     },
     {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile
+      path: '/blogPost/new',
+      name: 'CreateBlogPost',
+      component: CreateBlogPost
+    },
+    {
+      path: '//:id',
+      name: 'BlogPost',
+      component: BlogPost
+    },
+    {
+      path: '/viewPosts',
+      name: 'ViewPosts',
+      component: ViewPosts
     }
   ],
   mode: 'history'

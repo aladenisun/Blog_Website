@@ -72,7 +72,7 @@ export default {
       { title: 'Contact', link: 'contact' }
     ],
     toolbarItems: [
-      { title: 'View Blogs', link: '/' },
+      { title: 'View Blogs', link: '/viewPosts' },
       { title: 'Sign in', link: '/signIn' }
     ],
     socials: [

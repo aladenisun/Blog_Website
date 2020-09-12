@@ -38,7 +38,7 @@
         <v-btn
           :disabled="$store.state.loading"
           :loading="$store.state.loading"
-          color="brown"
+          color="secondary"
           class="mr-4"
           @click="submitApplication"
           >Subscribe</v-btn
