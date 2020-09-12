@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import AboutPage from '@/components/AboutPage.vue'
+import AboutPage from '@/components/Pages/AboutPage'
 export default {
   name: 'About',
   components: {

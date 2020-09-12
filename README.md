@@ -30,6 +30,13 @@ npm run test:unit
 npm run lint
 ```
 
+<<<<<<< HEAD
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+=======
+>>>>>>> 0a1d76778971b4ac64e3266531aa1c7bc48e6504
 ## RANDOM ADDITION
 
 this is a random comment

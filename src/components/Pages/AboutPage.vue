@@ -16,14 +16,14 @@
           max-width="400"
           height="500"
           elevation="12"
-          color="#e6ddd5"
+          color="#af8b62"
           translate="-50%"
         >
+          <v-card-title class="headtext text-xs-center">WELCOME!</v-card-title>
           <v-list-item>
             <v-list-item-content>
-              <v-list-item-title class="headtext">WELCOME!</v-list-item-title>
-              <v-card-text class="text--primary">
-                <p class="textStyle">
+              <v-card-text class="titleSpace text-xs-center">
+                <p class="textStyle text-xs-center">
                   Hi, I'm Nisun. A twenty-something year old computer engineering student who loves
                   to dance, sing, read and write! I am interested in this opportunity because i
                   believe I have a lot to learn and experience when it comes to pursing my career
@@ -41,7 +41,7 @@
     </v-row>
 
     <v-row class="justify-center">
-      <pre class="headtext"> A RANDOM EXERPT FROM A TEXT GENERATOR</pre>
+      <pre class="headtext text-xs-center"> A RANDOM EXERPT FROM A TEXT GENERATOR</pre>
     </v-row>
 
     <v-row class="textStyle" justify="center" align="center" no-gutters>
@@ -50,33 +50,34 @@
       </v-col>
     </v-row>
     <v-row class="justify-center" no-gutters>
-      <pre class="blocktitle"> A FEW THINGS ABOUT ME!</pre>
+      <pre class="blocktitle text-xs-center" color="black"> A FEW THINGS ABOUT ME!</pre>
     </v-row>
     <v-row>
-      <v-card class="mx-auto" max_width="400" max-height="400" color="#dac4b5">
+      <v-card class="text-xs-center" max_width="400" max-height="400" color="#af8b62">
         <v-list-item>
           <v-col>
             <v-list-item-content>
-              <pre class="titleEdit">I'M AN INFP</pre>
-              <v-list-item-text class="titleSpace"
+              <pre class="titleEdit text-xs-center">I'M AN INFP</pre>
+              <v-list-item-action-text class="titleSpace text-xs-center"
                 >According to the myres briggs personality test, I am an INFP. LOOK UP
-                YOURS!</v-list-item-text
+                YOURS!</v-list-item-action-text
               >
             </v-list-item-content>
           </v-col>
           <v-col max-width="80">
             <v-list-item-content>
-              <pre class="titleEdit">NEAT FREAK</pre>
-              <v-list-item-text class="titleSpace"
-                >I love things in order but I would not say I am the cleanest</v-list-item-text
+              <pre class="titleEdit text-xs-center">NEAT FREAK</pre>
+              <v-list-item-action-text class="titleSpace"
+                >I love things in order but I would not say I am the
+                cleanest</v-list-item-action-text
               >
             </v-list-item-content>
           </v-col>
           <v-col>
             <v-list-item-content>
-              <pre class="titleEdit">BASEMENTS</pre>
-              <v-list-item-text class="titleSpace"
-                >I'm afraid of all basements; no matter how nice!</v-list-item-text
+              <pre class="titleEdit text-xs-center">BASEMENTS</pre>
+              <v-list-item-action-text class="titleSpace"
+                >I'm afraid of all basements; no matter how nice!</v-list-item-action-text
               >
             </v-list-item-content>
           </v-col>
@@ -90,45 +91,6 @@
 export default {
   data: () => ({
     show: false,
-    item: [
-      {
-        text: 'Home',
-        disabled: false,
-        href: '@/views/Home.vue'
-      },
-      {
-        text: 'Blog',
-        disabled: false,
-        href: '@/views/Blog.vue'
-      },
-      {
-        text: 'Contact',
-        disabled: false,
-        href: '@/views/Contact.vue'
-      },
-      {
-        text: 'Subscribe',
-        disabled: false,
-        href: '@/views/Application.vue'
-      }
-    ],
-    socials: [
-      {
-        text: 'Instagram',
-        disabled: false,
-        href: 'https://www.instagram.com/nisunalade/'
-      },
-      {
-        text: 'Twitter',
-        disabled: false,
-        href: 'https://twitter.com/nisunalade'
-      },
-      {
-        text: 'Pinterest',
-        disabled: false,
-        href: 'https://www.pinterest.com/nisunalade/boards/'
-      }
-    ],
     messages: [
       {
         message:
@@ -145,26 +107,30 @@ export default {
 
 <style>
 .titleEdit {
-  color: #000000 !important;
+  color: black !important;
   text-decoration-line: underline;
-  font-size: 25px;
+  font-size: 23px;
+  font-weight: 500;
   text-decoration-style: solid;
   padding-left: 3rem !important;
   padding-bottom: 1rem !important;
   padding-top: 3rem !important;
-  font-family: cursive;
+  font-family: 'Courier New', Courier, monospace;
 }
 .titleSpace {
-  padding-left: 3rem !important;
+  color: black !important;
   margin-bottom: 3rem !important;
-  font-size: 20px;
+  font-size: 18px;
   font-family: cursive;
+  font-weight: 500;
 }
 .blocktitle {
   padding-top: 5rem !important;
   padding-bottom: 2rem !important;
   font-size: 25px;
   font-family: 'Courier New', Courier, monospace;
+  color: black;
+  font-weight: bolder;
 }
 .InfoSocials {
   color: #000000 !important;
@@ -182,21 +148,23 @@ export default {
   font-size: 15px;
 }
 .headtext {
-  font-size: 25px;
+  font-size: 34px;
   font-family: 'Courier New', Courier, monospace;
   align-self: center;
   justify-self: center;
   padding-top: 5rem !important;
   padding-bottom: 1rem !important;
+  font-weight: 800;
 }
 .paddingfooter {
   padding-bottom: 2rem !important;
 }
 .textStyle {
-  font-size: 13px;
+  font-size: 15px;
   font-family: 'Courier New', Courier, monospace;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
   color: black;
+  font-weight: 500;
 }
 </style>

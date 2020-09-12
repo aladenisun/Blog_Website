@@ -2,45 +2,57 @@
   <v-app :fullscreen="$vuetify.breakpoint.mobile">
     <v-card>
       <v-navigation-drawer v-model="drawer" absolute temporary app :color="color">
-        <v-list nav dense>
-          <v-list-item-group active-class="primary--text">
-            <v-list-item v-on:click="routeTo('/home')">
-              <v-list-item-title class="navigationBarColor1">Home</v-list-item-title>
-            </v-list-item>
-            <v-list-item v-on:click="routeTo('/about')">
-              <v-list-item-title class="navigationBarColor">About</v-list-item-title>
-            </v-list-item>
-            <v-list-item v-on:click="routeTo('/application')">
-              <v-list-item-title class="navigationBarColor">Subscribe</v-list-item-title>
-            </v-list-item>
-            <v-list-item v-on:click="routeTo('/contact')">
-              <v-list-item-title class="navigationBarColor">Contact</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
+        <v-list>
+          <v-list-item v-for="item in NavBarItems" :key="item.title" router :to="item.link">
+            <v-list-item-content class="navigationBarColor">{{ item.title }}</v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
       <v-app-bar app>
-        <v-toolbar>
+        <v-toolbar flat>
           <v-app-bar-nav-icon @click.native="drawer = !drawer"></v-app-bar-nav-icon>
-          <v-toolbar-title class="font">Unapologetic Sunrise</v-toolbar-title>
+          <v-toolbar-title class="font">
+            <router-link to="/" tag="span" style="cursor pointer">
+              Unapologetic Sunrise</router-link
+            >
+          </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items class="hidden-xs-only">
-            <v-btn class="bold">View Blogs</v-btn>
+            <v-btn
+              text
+              small
+              class="colorFooter"
+              v-for="item in toolbarItems"
+              :key="item.title"
+              router
+              :to="item.link"
+              >{{ item.title }}</v-btn
+            >
           </v-toolbar-items>
         </v-toolbar>
       </v-app-bar>
-      <v-main></v-main>
+      <main>
+        <router-view></router-view>
+      </main>
 
       <v-footer class="hidden-xs-only" color="#e6ddd5" flat tile>
         <pre class="colorFooter" color="black">Get connected with me on social networks!</pre>
         <v-spacer></v-spacer>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4" color="black" dark icon>
-          <v-icon size="24px">{{ icon }}</v-icon>
+        <v-btn
+          v-for="item in socials"
+          :key="item.icon"
+          :href="item.href"
+          class="mx-4"
+          color="black"
+          dark
+          icon
+        >
+          <v-icon size="24px">{{ item.icon }}</v-icon>
         </v-btn>
 
         <v-card-text class="py-2 white--text text-center">
           {{ new Date().getFullYear() }}
-          <pre class="colorFooter">UnapologeticSunrise</pre>
+          <pre class="small">UnapologeticSunrise</pre>
         </v-card-text>
       </v-footer>
     </v-card>
@@ -48,14 +60,27 @@
 </template>
 
 <script>
-import socials from './utils/constants/socials'
-//import { mdiAccount } from '@mdi/js';
 export default {
   name: 'App',
   data: () => ({
     drawer: false,
     color: 'secondary',
-    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram']
+    NavBarItems: [
+      { title: 'Home', link: '/' },
+      { title: 'About', link: '/about' },
+      { title: 'Subscribe', link: '/application' },
+      { title: 'Contact', link: 'contact' }
+    ],
+    toolbarItems: [
+      { title: 'View Blogs', link: '/viewPosts' },
+      { title: 'Sign in', link: '/signIn' }
+    ],
+    socials: [
+      { icon: 'mdi-facebook', href: 'https://www.facebook.com/' },
+      { icon: 'mdi-twitter', href: 'https://twitter.com/nisunalade' },
+      { icon: 'mdi-linkedin', href: 'https://linkedin.com' },
+      { icon: 'mdi-instagram', href: 'https://www.instagram.com/nisunalade/' }
+    ]
   }),
 
   methods: {
@@ -69,9 +94,9 @@ export default {
 <style>
 .navigationBarColor {
   color: #e0d2d2 !important;
-}
-.navigationBarColor1 {
-  color: rgb(224, 210, 210) !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 15px;
 }
 .colorFooter {
   color: black;
