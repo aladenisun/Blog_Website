@@ -5,7 +5,7 @@
       <v-row>
         <v-container fluid>
           <v-row dense>
-            <v-col v-for="card in cards" :key="card.title" :cols="card.flex" :text="card.text">
+            <v-col v-for="card in cards" :key="card.id" :cols="card.flex" :text="card.text">
               <v-card class="card-xs-center" style="cursor:pointer">
                 <v-img
                   :src="card.src"
@@ -18,13 +18,9 @@
                 <v-card-actions>
                   <v-spacer></v-spacer>
 
-                  <v-btn color="brown" @click="overlay = !overlay">
-                    Summary
-                  </v-btn>
+                  <v-btn color="brown" @click="overlay = !overlay">Summary</v-btn>
 
-                  <v-btn to="//1" color="brown" @click="onLoadPost(card.id)">
-                    Read
-                  </v-btn>
+                  <v-btn to="//1" color="brown" @click="onLoadPost(card.id)">Read</v-btn>
 
                   <v-btn icon @click="colorChage()">
                     <v-icon>mdi-heart</v-icon>
@@ -45,7 +41,7 @@
                   color="#dac4b5"
                 >
                   <v-card-text v-text="card.text"></v-card-text>
-                  <v-btn color="black" @click="overlay = false"> Exit</v-btn>
+                  <v-btn color="black" @click="overlay = false">Exit</v-btn>
                 </v-card>
               </v-overlay>
             </v-col>

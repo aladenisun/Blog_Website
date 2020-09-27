@@ -12,23 +12,18 @@
         <v-toolbar flat>
           <v-app-bar-nav-icon @click.native="drawer = !drawer"></v-app-bar-nav-icon>
           <v-toolbar-title class="font">
-            <router-link to="/" tag="span" style="cursor pointer">
-              Unapologetic Sunrise</router-link
-            >
+            <router-link to="/" tag="span" style="cursor:pointer">Unapologetic Sunrise</router-link>
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-toolbar-items class="hidden-xs-only">
-            <v-btn
-              text
-              small
-              class="colorFooter"
-              v-for="item in toolbarItems"
-              :key="item.title"
-              router
-              :to="item.link"
-              >{{ item.title }}</v-btn
-            >
-          </v-toolbar-items>
+          <v-toolbar-items
+            class="colorFooter"
+            text
+            small
+            v-for="item in toolbarItems"
+            :key="item.title"
+            router
+            :to="item.link"
+          >{{ item.title }}</v-toolbar-items>
         </v-toolbar>
       </v-app-bar>
       <main>

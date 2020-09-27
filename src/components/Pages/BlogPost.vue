@@ -4,13 +4,16 @@
     <v-layout row wrap>
       <v-flex xs12>
         <v-spacer></v-spacer>
-        <section flat class="imageEdit" justify="center" align="center"></section>
+        <section
+          flat
+          class="imageEdit"
+          src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/fullset/Danasia/RX-Debbie-Patterson-Dorling-Kindersley-English-Ivy.jpg.rend.hgtvcom.1280.853.suffix/1496166616339.jpeg"
+          justify="center"
+          align="center"
+        ></section>
         <v-card>
           <v-card-title>
-            <pre justify="center--text" align="center--text">
-BLOG POST
-           </pre
-            >
+            <pre justify="center--text" align="center--text">BLOG POST</pre>
             <v-card-text>
               <div class="info--text">10th Sept 2020</div>
               <div>
@@ -32,9 +35,19 @@ BLOG POST
   </v-container>
 </template>
 
+<script>
+export default {
+  props: ['id'],
+  computed: {
+    post() {
+      return this.$store.getters.loadedMeetup(this.id)
+    }
+  }
+}
+</script>
 <style>
 .imageEdit {
-  background-image: url('https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/fullset/Danasia/RX-Debbie-Patterson-Dorling-Kindersley-English-Ivy.jpg.rend.hgtvcom.1280.853.suffix/1496166616339.jpeg');
+  /* background-image: url('https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/fullset/Danasia/RX-Debbie-Patterson-Dorling-Kindersley-English-Ivy.jpg.rend.hgtvcom.1280.853.suffix/1496166616339.jpeg'); */
   background-position: center;
   width: 100%;
   height: 30vh;

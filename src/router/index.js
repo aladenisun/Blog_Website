@@ -47,6 +47,7 @@ export default new VueRouter({
     {
       path: '//:id',
       name: 'BlogPost',
+      props: true,
       component: BlogPost
     },
     {
