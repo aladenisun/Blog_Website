@@ -12,18 +12,23 @@
         <v-toolbar flat>
           <v-app-bar-nav-icon @click.native="drawer = !drawer"></v-app-bar-nav-icon>
           <v-toolbar-title class="font">
-            <router-link to="/" tag="span" style="cursor:pointer">Unapologetic Sunrise</router-link>
+            <router-link to="/" tag="span" style="cursor pointer">Unapologetic Sunrise</router-link>
           </v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-toolbar-items
-            class="colorFooter"
-            text
-            small
-            v-for="item in toolbarItems"
-            :key="item.title"
-            router
-            :to="item.link"
-          >{{ item.title }}</v-toolbar-items>
+
+          <v-toolbar-items>
+            <v-col>
+              <v-btn
+                class="colorFooter"
+                text
+                small
+                v-for="item in toolbarItems"
+                :key="item.title"
+                router
+                :to="item.link"
+              >{{ item.title }}</v-btn>
+            </v-col>
+          </v-toolbar-items>
         </v-toolbar>
       </v-app-bar>
       <main>
@@ -77,7 +82,6 @@ export default {
       { icon: 'mdi-instagram', href: 'https://www.instagram.com/nisunalade/' }
     ]
   }),
-
   methods: {
     routeTo(newPath) {
       this.$router.push({ path: newPath })
