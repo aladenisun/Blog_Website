@@ -7,10 +7,10 @@
         <v-card class="mx-auto text-xs-center text-sm-right" max-width="900">
           <v-container fluid>
             <v-row dense>
-              <v-col v-for="post in posts" :key="post.id" :cols="post.flex" :text="post.text">
+              <v-col v-for="card in cards" :key="card.id" :cols="card.flex" :text="card.text">
                 <v-card class="card-xs-center" style="cursor:pointer">
                   <v-img
-                    :src="post.src"
+                    :src="card.src"
                     class="white--text align-end text-xs-center"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                     height="200px"
@@ -22,7 +22,7 @@
 
                     <v-btn color="brown" @click="overlay = !overlay">Summary</v-btn>
 
-                    <v-btn to="//1" color="brown" @click="onLoadPost(post.id)">Read</v-btn>
+                    <v-btn to="//1" color="brown" @click="onLoadPost(card.id)">Read</v-btn>
 
                     <v-btn icon @click="colorChage()">
                       <v-icon>mdi-heart</v-icon>
@@ -58,7 +58,7 @@
 <script>
 export default {
   computed: {
-    posts() {
+    cards() {
       return this.$store.getters.featuredPosts
     }
   },

@@ -26,7 +26,8 @@
                 :key="item.title"
                 router
                 :to="item.link"
-              >{{ item.title }}</v-btn>
+                >{{ item.title }}</v-btn
+              >
             </v-col>
           </v-toolbar-items>
         </v-toolbar>
