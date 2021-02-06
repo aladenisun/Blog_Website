@@ -2,7 +2,7 @@
   <v-container>
     <v-flex xs12 sm10 md12 class="text-xs-center">
       <section xs12 sm12 md12 class="sectionEdit" justify="center" align="center"></section>
-      <div class="postTitle">POSTS</div>
+      <div class="postTitle">RECENT POSTS</div>
       <v-row>
         <v-card class="mx-auto text-xs-center text-sm-right" max-width="900">
           <v-container fluid>
@@ -22,7 +22,7 @@
 
                     <v-btn color="brown" @click="overlay = !overlay">Summary</v-btn>
 
-                    <v-btn to="//1" color="brown" @click="onLoadPost(card.id)">Read</v-btn>
+                    <v-btn color="brown" @click="onLoadPost(card.id)">Read</v-btn>
 
                     <v-btn icon @click="colorChage()">
                       <v-icon>mdi-heart</v-icon>
@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     onLoadPost(id) {
-      this.$router.push('//' + id)
+      this.$router.push('/posts/' + id)
     }
   }
 }
