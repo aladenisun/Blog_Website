@@ -69,8 +69,8 @@ export default {
     NavBarItems: [
       { title: 'Home', link: '/' },
       { title: 'About', link: '/about' },
-      { title: 'Subscribe', link: '/application' }
-      // { title: 'Contact', link: 'contact' }
+      { title: 'Subscribe', link: '/application' },
+      { title: 'Contact', link: 'contact' }
     ],
     toolbarItems: [
       { title: 'View Blogs', link: '/posts' },
